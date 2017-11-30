@@ -9,6 +9,8 @@ import hbm.HibernateUtil;
 import java.util.List;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import org.hibernate.criterion.Order;
+import org.hibernate.criterion.Restrictions;
 import pojo.Score;
 
 /**
@@ -38,4 +40,13 @@ public class ScoreDao {
         }
         return true;
     }
+    
+    
+    public List<Score> getScoresByDiscNumber(int nDiscos) {
+        return (List<Score>) this.session.createCriteria(Score.class)
+                .add(Restrictions.eq("numDiscos", nDiscos))
+                .addOrder(Order.asc("movimientos"))
+                .list();
+    }
+    
 }
