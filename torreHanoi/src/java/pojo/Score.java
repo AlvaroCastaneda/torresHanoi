@@ -18,6 +18,19 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "Score")
 public class Score {
+    
+    public Score(){
+    
+    }
+
+    public Score(String nombre, int numDiscos, int movimientos) {
+        this.nombre = nombre;
+        this.numDiscos = numDiscos;
+        this.movimientos = movimientos;
+    }
+    
+    
+    
     @Id @GeneratedValue
     @Column(name = "idScore")
     private int idScore;
