@@ -9,8 +9,91 @@ and open the template in the editor.
         <title>TODO supply a title</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <script src="js/popper.js "></script>
+        <script src="js/jquery-3.2.1.min.js "></script>
+        <script src="js/bootstrap.js "></script>
+        <style>
+            body{
+                background-color: #155724;
+            }
+            button {
+                align-items: center ;
+            }
+        </style>
     </head>
     <body>
-        <div>TODO write content</div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-2"></div>
+                <div class="col-md-8">
+                    <h1 style="color:#fff; text-align: center">Torre de Tanke</h1>
+                    <img src="img/tanke.png" height="400"  style="margin: 20px 20px">
+                </div>
+            </div>
+            <div class="row" > 
+                <div class="col-md-4"></div>
+                <div class="col-md-4">
+                    <!-- Button trigger modal -->
+                    <div class="row">
+                        <div class="col-md-12">
+                            <button type="button" class="btn btn-outline-light btn-lg" data-toggle="modal" data-target="#exampleModal">
+                                ¡Jugar!
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Modal -->
+                    <div class="modal" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Instrucciones</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="col-md-12" ><p>
+                                            La torre de Hanoi es un juego de ingenio que desafía a trasladar la torre de un
+                                            extremo al otro en la menor cantidad de movimientos posibles.
+                                            <br>
+                                            Reglas  <br>
+                                            1.- Sólo se puede mover un disco a la vez. <br>
+                                            2.- No se puede colocar una madera más grande encima de una más pequeña. <br>
+                                            3.- Para comenzar a jugar ingresa tu nombre y número de discos.
+                                        </p>
+                                    </div>
+                                    <form>
+                                        <div class="col-md-12">
+                                            <p>Nombre</p> 
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="input-group">
+                                                <input class="form-control" type="text" name="nombre" id="nombre" value="" > 
+                                            </div>
+                                            <br>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <p>Número de Discos</p> 
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="input-group">
+                                                <input class="form-control" type="number" name="ndiscos" id="discos"   min="3" max="100"  value=""> 
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="modal-footer">
+                                    <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> -->
+                                    <button type="button" class="btn btn-primary btn-block">Siguiente</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4"></div>
+            </div>
+        </div> 
     </body>
 </html>
