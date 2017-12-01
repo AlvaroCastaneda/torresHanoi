@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>lel</title>
+        <script src="Snap.svg-0.5.1/dist/snap.svg-min.js"></script>
+        <script src="jquery-2.1.1.min.js"></script>
+    </head>
+    <body onload="creaPatrana()">
+
+        <script>
+            
+            var Tx;
+            var Ty;
+            var discos=[];
+            var Torre1=[];
+            var Torre2=[];
+            var Torre3=[];
+            var color = ["#000", "#84aa33", "#ef7135", "#5fbb4e", "#5fbb4e"];
+            //crea el espacio en el que se van a mostrar los graficos svg.
+            var s = Snap(1900, 800);
+
+            //Se crean las torres rect es la base y c es el tronco, los primeros dos elementos dentro de los parentesis en s.rect, son las coordenadas,
+            // y los siguientes dos son las medidas de largo y ancho
+            var rect = s.rect(150, 220, 180, 10).attr({fill: "#47574d"});
+            var torre1= s.rect(227, 26, 20, 200, 10).insertBefore(rect).attr({fill: "#bada55", stroke: "#000", strokeWidth: 6});
+            torre1.node.onclick = function () {
+                console.log(torre1.node.x.animVal.value);
+                Tx=torre1.node.x.animVal.value;
+                Ty=torre1.node.y.animVal.value;                
+            }
+
+            var rect1 = s.rect(400, 220, 180, 10).attr({fill: "#47574d"});
+            var torre2= s.rect(484, 26, 20, 200, 10).insertBefore(rect).attr({fill: "#bada55", stroke: "#000", strokeWidth: 6})
+
+            var rect2 = s.rect(650, 220, 180, 10).attr({fill: "#47574d"});
+            var torre3=s.rect(727, 26, 20, 200, 10).insertBefore(rect).attr({fill: "#bada55", stroke: "#000", strokeWidth: 6});
+            
+            function creaPatrana() {
+                for (var i = 2; i <= 5; i++) {
+                    var r;
+                    r = s.rect(torre1.node.x.animVal.value - (10 * i), 40 + (i * 30), (i * 100) - 138.5, 30);
+                    r.attr("id", i);
+                    r.id = i;
+                    r.attr({fill: color[i]});
+                    r.attr("idCa", i);
+                    r.drag();
+                    discos.push(r);
+                }
+                discos.forEach(function (disco) {
+                    console.log(disco.id);
+                    $("#" + disco.id).click(function (evt) {
+                        DiscoActual=this.id.baseVal;
+                        if(Tx>0 && Tx<400){
+                           torre1.forEach(function(tamano){
+                               
+                               if(x<7){}
+                           })
+                        }
+                        this.height.baseVal.value = 500;
+                       //this.animate((200, 200), 20);
+                        actualBox = this;
+                        console.log("Actual: " + actualBox);
+                    });
+                });
+            }
+        </script>
+    </body>
+</html>
