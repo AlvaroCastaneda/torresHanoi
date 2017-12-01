@@ -26,10 +26,10 @@ Torres de hanoi 1.0
 ## **Autores**
 
 + [Justino Duran.](https://www.linkedin.com/in/ilich-arredondo-43725a150/)   
-+ [Citlali .]()      
++ [Citlali Hernandez.]()      
 + [Alvaro Castañeda.](https://www.linkedin.com/in/alvaro-casta%C3%B1eda-escobedo-691a0b152/)     
-+ [Enrique .]()  
-+ [Enrique .]()  
++ [Enrique Rivera.]()  
++ [Jesus Rubio.]()  
 
 ## **Licencia**
 
