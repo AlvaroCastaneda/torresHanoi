@@ -15,6 +15,7 @@ import static org.junit.Assert.*;
 import pojo.Score;
 import hbm.HibernateUtil;
 import java.util.List;
+import org.json.JSONArray;
 
 /**
  *
@@ -46,12 +47,7 @@ public class NewEmptyJUnitTest {
     //
      @Test
      public void  hello() {
+         JSONArray leaderBoard = new ScoreDao().getScoresByDiscNumber(5);
          
-         List<Score> leaderBoard = new ScoreDao().getScoresByDiscNumber(3);
-         
-         for (Score score : leaderBoard) {
-             System.out.println(score.getNombre()+" gano con "+score.getMovimientos()+" movimientos.");
-         }
-  
      }
 }

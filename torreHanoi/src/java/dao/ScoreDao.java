@@ -11,6 +11,8 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.criterion.Order;
 import org.hibernate.criterion.Restrictions;
+import org.json.JSONArray;
+import org.json.JSONObject;
 import pojo.Score;
 
 /**
@@ -42,11 +44,26 @@ public class ScoreDao {
     }
     
     
-    public List<Score> getScoresByDiscNumber(int nDiscos) {
-        return (List<Score>) this.session.createCriteria(Score.class)
+    public JSONArray getScoresByDiscNumber(int nDiscos) {
+        
+        JSONObject json;
+        List<Score> lista = (List<Score>) this.session.createCriteria(Score.class)
                 .add(Restrictions.eq("numDiscos", nDiscos))
-                .addOrder(Order.asc("movimientos"))
+                .addOrder(Order.desc("movimientos"))
                 .list();
+        JSONArray jarray = new JSONArray();
+        json = new JSONObject();        
+    
+        for (Score score : lista) {
+            
+            json.put("Nombre", score.getNombre());
+            json.put("Numero de Discos", score.getNumDiscos());
+            json.put("Movimientos", score.getMovimientos());
+            jarray.put(json);
+        }
+    
+        System.out.println(jarray);
+        return jarray;
     }
     
 }
